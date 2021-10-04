@@ -118,9 +118,9 @@ try:
 except Exception as e:
     print(str(e))
 print(datetime.datetime.now())
-ctx=sc.connect(user='dasrw',
-               password='Vnsny@321',
-               account='vnsnydev.us-east-1.privatelink')
+ctx=sc.connect(user='xxxxx',
+               password='xxxxxxx',
+               account='xxxxxxxxx.us-east-1.privatelink')
 snowCursor=ctx.cursor()
 copySQL="""
 COPY INTO CHOICE.TMG_CLAIMS_DIAGNOSIS
