@@ -7,7 +7,7 @@ git pull origin branchName
 # push a new local branch to remote
 git push -n origin feature/branchName
 
-track a remote feature branch on local
+track a remote feature branch on local repository
 git branch --track Feature_1379_New1 origin/Feature_1379_New1
 # or use the below
 git checkout --track origin/Feature_1379_New1
