@@ -7,7 +7,7 @@ git pull origin branchName
 # push a new local branch to remote
 git push -n origin feature/branchName
 
-track a remote feature branch on local repository
+# track a remote feature branch on local
 git branch --track Feature_1379_New1 origin/Feature_1379_New1
 # or use the below
 git checkout --track origin/Feature_1379_New1
@@ -17,6 +17,9 @@ git rev-parse HEAD | cut -c 1-8
 
 # refresh branch list in clone from remote
 git remote update origin --prune
+
+# delete branch from local
+git branch -d ETRNL_178_CoreLogic_Deploy_Assignment_Data_Vault_tables
 
 # delete a remote branch
 git push origin --delete feature/1413-CoreLogic---Initial-Data-Vault-Deploy-to-NON-PROD-and-PROD
@@ -44,3 +47,43 @@ git rm --cached <filename>
  # then you can remove that file using below
 git rm <filename>
 
+# to restore a deleted remote git branch
+# step 1: the below will give the sha value of the latest change done to the deleted branch
+git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\ -f3 | xargs -n 1 git log -n 1 --pretty=oneline
+
+# step 2: using the sha value from above step, recreate a new branch
+git branch <new branch name> <sha>
+
+
+# to create a new feature branch in github
+# go to github repository in github.com and create a new feature branch as "feature/your-feature-name"
+# to update the local list of remote branches use the below:
+git remote update origin --prune
+# now you can see the new feature branch on your local
+
+# checkout a branch from commit ID
+git checkout -b <new_branch_name> 7d4c83d1
+
+#see log of a branch between 2 dates
+git log --since='Apr 1 2021' --until='Apr 4 2021'
+#
+# To update the new pass key, enter the below commaond on git bash
+#
+git config --global credential.helper store
+#
+# After than if you pull or push, git will prompt for user ID and password
+# enter user ID as your libertymutual email ID
+# and use the pass key as your password
+#
+#
+# to change git editor to vim
+git config --global core.editor "vim"
+#
+# to revert a commit in a branch
+# checkout the branch that you want to modify
+# using git log, find the hasv value to which you want to revert to
+# then using below set of commands revert to previous commit
+git checkout <hash value> .
+git add .
+git commit -m "Reverting to <hash value>"
+git push
