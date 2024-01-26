@@ -87,3 +87,5 @@ git checkout <hash value> .
 git add .
 git commit -m "Reverting to <hash value>"
 git push
+#decorate git log
+git log --graph --decorate --oneline
