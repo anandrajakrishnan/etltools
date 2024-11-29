@@ -89,3 +89,28 @@ git commit -m "Reverting to <hash value>"
 git push
 #decorate git log
 git log --graph --decorate --oneline
+
+# get list of git push from a particular branch
+git reflog show feature/DAT-837-build-pipelines-for-data-vault
+
+#delete branch locally
+git branch -d localBranchName
+
+#delete branch remotely
+git push origin --delete remoteBranchName
+
+#show difference between 2 branches
+# step 1: checkout the branch that you want to compare
+#step 2: 
+git diff --name-only origin/main..HEAD
+
+# create ssh key
+# go to folder C:\Users\rajakrishnana\.ssh
+# run the below command
+ssh-keygen -t ed25519 -b 256
+
+#the above command will create 2 files in .ssh folder
+# copy the content of the *.pub file to github ssh key
+
+# to revert git add, use below
+git reset
