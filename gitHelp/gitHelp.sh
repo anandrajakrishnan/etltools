@@ -114,3 +114,24 @@ ssh-keygen -t ed25519 -b 256
 
 # to revert git add, use below
 git reset
+#
+# list all components that differ between 2 branches
+# git checkout branch 1
+# then run below to compare with main branch
+git diff --name-status main
+
+# get difference between a file in 2 branches
+# go to branch A
+# cd to the folder where the file is located
+# use the below command
+git diff <branch 2> -- CONTROL.ETL_APPLICATION.sql
+
+# see older version of file in a branch
+git show HEAD@{2025-01-08}:./cf_utils_v2.py
+
+# see list of components that changed between
+# two commits
+git diff --name-only <commit1> <commit2>
+
+# see history of all changes done to a file
+gitk -- <filename>--name
