@@ -135,3 +135,12 @@ git diff --name-only <commit1> <commit2>
 
 # see history of all changes done to a file
 gitk -- <filename>--name
+
+# git merge dry run to check if the merge 
+# has any conflict
+
+git merge --no-commit --no-ff <branch to merge>
+
+# after checking any conflict, abort the merge
+
+git merge --abort
