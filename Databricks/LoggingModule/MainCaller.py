@@ -1,3 +1,4 @@
+# test the connectivity from local machine
 #dbutils.library.restartPython()
 import logging
 import sys
